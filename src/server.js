@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const porta = 3003
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -9,6 +10,7 @@ app.post('/contato',(req, resp) => {
     resp.send('<h1> Mensagem Enviada com Sucesso!!')
 
 })
-app.listen(3003, () => {
-    console.log("WebService Iniciado")
+app.listen(porta, () => {
+    console.log(`Api Iniciada na Porta ${porta}`)
+    console.log('Serviço Ativo')
 })
